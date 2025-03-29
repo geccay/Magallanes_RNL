@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('first_name', 55);
             $table->string('middle_name', 55)->nullable();
             $table->string('last_name', 55);
-            $table->string('suffic_name', 55)->nullable();
+            $table->string('suffix_name', 55)->nullable();
             $table->integer('age');
             $table->unsignedBigInteger('gender_id');
             $table->string('address', 255);

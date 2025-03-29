@@ -3,14 +3,23 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gender;
 use Illuminate\Http\Request;
 
 class GenderController extends Controller
 {
-    public function storeGender(Request $request) {
+    public function loadGenders()
+    {
+        $genders = Gender::all();
+        return response()->json([
+            'genders' => $genders
+        ], 200);
+    }
+
+    public function storeGender(Request $request)
     {
         $validated = $request->validate([
-            'gender' => ['required', 'min:4', 'max:10'] 
+            'gender' => ['required', 'min:4', 'max:10']
         ]);
 
         Gender::create([
@@ -21,5 +30,4 @@ class GenderController extends Controller
             'message' => 'Gender Successfully Added.'
         ], 200);
     }
-}
-}
+};
