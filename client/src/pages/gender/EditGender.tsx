@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AlertMessage from "../../components/AlertMessage";
-import EditGenderForm from "../../components/forms/EditGenderForm";
+import EditGenderForm from "../../components/forms/gender/EditGenderForm";
 import MainLayout from "../layout/MainLayout";
 
 const EditGender = () => {
