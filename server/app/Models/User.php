@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, HasApiTokens, Notifiable;
 
     protected $table = 'tbl_users';
@@ -32,9 +32,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
-
-public function gender (): BelongsTo {
-    return $this->belongsTo(Gender::class, 'gender_id', 'gender_id');
-}
-
+    public function gender(): BelongsTo
+    {
+        return $this->belongsTo(Gender::class, 'gender_id', 'gender_id');
+    }
 }
