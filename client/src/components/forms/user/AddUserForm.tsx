@@ -98,12 +98,7 @@ const AddUserForm = ({
     UserService.storeUser(state)
       .then((res) => {
         if (res.status === 200) {
-          setState((prevState) => ({
-            ...prevState,
-            errors: {} as UserFieldErrors,
-          }));
-
-          handleResetNecessaryFields();
+           handleResetNecessaryFields();
 
           onUserAdded(res.data.message);
         } else {
