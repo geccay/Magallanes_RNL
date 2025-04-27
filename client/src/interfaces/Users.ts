@@ -1,6 +1,6 @@
 import Genders  from "./Genders";
 
-export interface Users {
+interface Users {
     user_id: number;
     first_name: string;
     middle_name: string;
@@ -16,3 +16,5 @@ export interface Users {
     created_at: string;
     updated_at: string;
 }
+
+export default Users;
