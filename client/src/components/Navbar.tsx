@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const menuItems = [
     {
-      route: "/",
+      route: "/genders",
       title: "Genders",
     },
     {
@@ -20,6 +20,7 @@ const Navbar = () => {
       title: "Users",
     },
   ];
+  8;
 
   const handleLogout = (e: FormEvent) => {
     e.preventDefault();
